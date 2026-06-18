@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "tsx watch solutions/index.ts",
-    "debug": "tsx --inspect-brk=0.0.0.0:9229 solutions/index.ts"
+    "debug": "tsx --inspect-brk=0.0.0.0:9229 solutions/index.ts",
+    "update": "python3 scripts/reclassify.py --all && python3 scripts/update_readme.py"
   },
   "devDependencies": {
     "@types/node": "^22.10.0",
