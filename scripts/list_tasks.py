@@ -29,7 +29,7 @@ def main():
         info[qid] = {"title": title, "diff": diff, "slug": slug}
 
     # Scan all .ts files
-    src_dir = os.path.join(REPO_ROOT, "src", "leetcode")
+    src_dir = os.path.join(REPO_ROOT, "solutions")
     files = []
     for root, dirs, fnames in os.walk(src_dir):
         dirs[:] = [d for d in dirs if d not in ("by-topic", "node_modules")]

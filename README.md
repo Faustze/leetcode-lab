@@ -4,8 +4,8 @@ Personal LeetCode solutions with a built-in TypeScript debugger and automated ta
 
 ## Structure
 
-```
-src/leetcode/
+```bash
+solutions/
 ├── easy/            # 23 problems
 ├── medium/          # 10 problems
 ├── hard/            # 0 problems
@@ -63,46 +63,46 @@ Total: 33 problems
 
 ### easy (23 files)
 
-| # | Title | Difficulty |
-|---|-------|------------|
-| 104 | Maximum Depth of Binary Tree | Easy |
-| 345 | Reverse Vowels of a String | Easy |
-| 448 | Find All Numbers Disappeared in an Array | Easy |
-| 485 | Max Consecutive Ones | Easy |
-| 605 | Can Place Flowers | Easy |
-| 645 | Set Mismatch | Easy |
-| 1071 | Greatest Common Divisor of Strings | Easy |
-| 1365 | How Many Numbers Are Smaller Than the Current Number | Easy |
-| 1431 | Kids With the Greatest Number of Candies | Easy |
-| 1470 | Shuffle the Array | Easy |
-| 1768 | Merge Strings Alternately | Easy |
-| 2620 | Counter | Easy |
-| 2626 | Array Reduce Transformation | Easy |
-| 2629 | Function Composition | Easy |
-| 2665 | Counter II | Easy |
-| 2666 | Allow One Function Call | Easy |
-| 2677 | Chunk Array | Easy |
-| 2703 | Return Length of Arguments Passed | Easy |
-| 2715 | Timeout Cancellation | Easy |
-| 2723 | Add Two Promises | Easy |
-| 2724 | Sort By | Easy |
-| 2725 | Interval Cancellation | Easy |
-| 2726 | Calculator with Method Chaining | Easy |
+| #    | Title                                                | Difficulty |
+| ---- | ---------------------------------------------------- | ---------- |
+| 104  | Maximum Depth of Binary Tree                         | Easy       |
+| 345  | Reverse Vowels of a String                           | Easy       |
+| 448  | Find All Numbers Disappeared in an Array             | Easy       |
+| 485  | Max Consecutive Ones                                 | Easy       |
+| 605  | Can Place Flowers                                    | Easy       |
+| 645  | Set Mismatch                                         | Easy       |
+| 1071 | Greatest Common Divisor of Strings                   | Easy       |
+| 1365 | How Many Numbers Are Smaller Than the Current Number | Easy       |
+| 1431 | Kids With the Greatest Number of Candies             | Easy       |
+| 1470 | Shuffle the Array                                    | Easy       |
+| 1768 | Merge Strings Alternately                            | Easy       |
+| 2620 | Counter                                              | Easy       |
+| 2626 | Array Reduce Transformation                          | Easy       |
+| 2629 | Function Composition                                 | Easy       |
+| 2665 | Counter II                                           | Easy       |
+| 2666 | Allow One Function Call                              | Easy       |
+| 2677 | Chunk Array                                          | Easy       |
+| 2703 | Return Length of Arguments Passed                    | Easy       |
+| 2715 | Timeout Cancellation                                 | Easy       |
+| 2723 | Add Two Promises                                     | Easy       |
+| 2724 | Sort By                                              | Easy       |
+| 2725 | Interval Cancellation                                | Easy       |
+| 2726 | Calculator with Method Chaining                      | Easy       |
 
 ### medium (10 files)
 
-| # | Title | Difficulty |
-|---|-------|------------|
-| 150 | Evaluate Reverse Polish Notation | Medium |
-| 636 | Exclusive Time of Functions | Medium |
-| 1441 | Build an Array With Stack Operations | Medium |
-| 2622 | Cache With Time Limit | Medium |
-| 2623 | Memoize | Medium |
-| 2627 | Debounce | Medium |
-| 2631 | Group By | Medium |
-| 2637 | Promise Time Limit | Medium |
-| 2693 | Call Function with Custom Context | Medium |
-| 2721 | Execute Asynchronous Functions in Parallel | Medium |
+| #    | Title                                      | Difficulty |
+| ---- | ------------------------------------------ | ---------- |
+| 150  | Evaluate Reverse Polish Notation           | Medium     |
+| 636  | Exclusive Time of Functions                | Medium     |
+| 1441 | Build an Array With Stack Operations       | Medium     |
+| 2622 | Cache With Time Limit                      | Medium     |
+| 2623 | Memoize                                    | Medium     |
+| 2627 | Debounce                                   | Medium     |
+| 2631 | Group By                                   | Medium     |
+| 2637 | Promise Time Limit                         | Medium     |
+| 2693 | Call Function with Custom Context          | Medium     |
+| 2721 | Execute Asynchronous Functions in Parallel | Medium     |
 
 ## Customization
 

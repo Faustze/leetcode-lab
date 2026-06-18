@@ -4,8 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "tsx watch src/index.ts",
-    "debug": "tsx --inspect-brk=0.0.0.0:9229 src/index.ts"
+    "dev": "tsx watch solutions/index.ts",
+    "debug": "tsx --inspect-brk=0.0.0.0:9229 solutions/index.ts"
   },
   "devDependencies": {
     "@types/node": "^22.10.0",

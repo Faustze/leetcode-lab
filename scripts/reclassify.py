@@ -3,11 +3,11 @@
 Reclassify LeetCode problems by difficulty and/or topic.
 
 Usage:
-    python3 scripts/reclassify.py                    # classify src/leetcode/ by difficulty
-    python3 scripts/reclassify.py --topic            # classify src/leetcode/ by topic
-    python3 scripts/reclassify.py --dir src/leetcode/leetcode-75   # classify a specific dir
-    python3 scripts/reclassify.py --topic --dir src/leetcode/leetcode-75
-    python3 scripts/reclassify.py --all              # difficulty + topic for src/leetcode/
+    python3 scripts/reclassify.py                    # classify solutions/ by difficulty
+    python3 scripts/reclassify.py --topic            # classify solutions/ by topic
+    python3 scripts/reclassify.py --dir solutions/leetcode-75   # classify a specific dir
+    python3 scripts/reclassify.py --topic --dir solutions/leetcode-75
+    python3 scripts/reclassify.py --all              # difficulty + topic for solutions/
 """
 import argparse
 import json
@@ -204,7 +204,7 @@ def main():
     if not args.topic and not args.difficulty and not args.all:
         args.all = True  # default
 
-    target_dir = args.dir or os.path.join(REPO_ROOT, "src", "leetcode")
+    target_dir = args.dir or os.path.join(REPO_ROOT, "solutions")
     target_dir = os.path.abspath(target_dir)
 
     if not os.path.isdir(target_dir):

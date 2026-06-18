@@ -32,7 +32,7 @@
     }
   },
   "include": [
-    "src/**/*.ts",
+    "solutions/**/*.ts",
     "vite.config.ts",
     "vitest.config.ts"
   ]
