@@ -33,7 +33,11 @@ Use the `leetcode-skeleton.md` skill — send a LeetCode URL and it generates a 
 ### Manually
 
 1. Create `solutions/NNNN-problem-name.ts` with the task number prefix
-2. Run the classification script to organize it
+2. Run the update script to organize it:
+
+```bash
+npm run update
+```
 
 ## Classification Script
 
@@ -50,7 +54,7 @@ python3 scripts/reclassify.py --topic
 python3 scripts/reclassify.py --all
 
 # For a specific directory
-python3 scripts/reclassify.py --topic --dir solutions/leetcode-75
+python3 scripts/reclassify.py --topic --dir solutions/custom
 ```
 
 > **Note:** `by-topic/` is in `.gitignore` — it's regenerated locally and not committed.

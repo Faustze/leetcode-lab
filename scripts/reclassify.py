@@ -5,8 +5,8 @@ Reclassify LeetCode problems by difficulty and/or topic.
 Usage:
     python3 scripts/reclassify.py                    # classify solutions/ by difficulty
     python3 scripts/reclassify.py --topic            # classify solutions/ by topic
-    python3 scripts/reclassify.py --dir solutions/leetcode-75   # classify a specific dir
-    python3 scripts/reclassify.py --topic --dir solutions/leetcode-75
+    python3 scripts/reclassify.py --dir solutions/custom   # classify a specific dir
+    python3 scripts/reclassify.py --topic --dir solutions/custom
     python3 scripts/reclassify.py --all              # difficulty + topic for solutions/
 """
 import argparse

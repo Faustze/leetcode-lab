@@ -145,7 +145,7 @@ def generate_readme(problem_info, solutions):
     lines.append("python3 scripts/reclassify.py --all")
     lines.append("")
     lines.append("# For a specific directory")
-    lines.append("python3 scripts/reclassify.py --topic --dir solutions/leetcode-75")
+    lines.append("python3 scripts/reclassify.py --topic --dir solutions/custom")
     lines.append("```")
     lines.append("")
     lines.append("> **Note:** `by-topic/` is in `.gitignore` — it's regenerated locally and not committed.")
