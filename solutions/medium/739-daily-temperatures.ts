@@ -5,18 +5,54 @@
   return an array answer such that answer[i] is the number of days you have
   to wait after the i-th day to get a warmer temperature. If there is no
   future day for which this is possible, keep answer[i] == 0 instead.
-
+git@github.com:Faustze/frontend-study-lab.git
   Constraints:
   - 1 <= temperatures.length <= 10^5
   - 30 <= temperatures[i] <= 100
 */
 
-function dailyTemperatures(temperatures: number[]): number[] {}
+function dailyTemperatures(temperatures: number[]): number[] {
+  const n = temperatures.length;
+  const answer: number[] = new Array(n).fill(0); // по умолчанию 0
+  const stack: number[] = []; // храним ИНДЕКСЫ
+
+  for (let i = 0; i < n; i++) {
+    // Пока стек не пуст И текущая температура ВЫШЕ температуры на верхушке
+    while (stack.length > 0 && temperatures[i] > temperatures[stack.at(-1)!]) {
+      const topIdx = stack.pop()!;
+      answer[topIdx] = i - topIdx; // расстояние между индексами
+    }
+    stack.push(i);
+  }
+
+  return answer;
+}
 
 // Local check:
 console.log(dailyTemperatures([73, 74, 75, 71, 69, 72, 76, 73])); // [1,1,4,2,1,1,0,0]
 console.log(dailyTemperatures([30, 40, 50, 60])); // [1,1,1,0]
 console.log(dailyTemperatures([30, 60, 90])); // [1,1,0]
+
+/**
+ * O(n^2)
+ */
+// function dailyTemperatures(temperatures: number[]): number[] {
+//   const answer: number[] = [];
+
+//   for (let i = 0; i < temperatures.length; i++) {
+//     let j = i + 1;
+//     let cnt = 1;
+
+//     while (j < temperatures.length && temperatures[i] >= temperatures[j]) {
+//       cnt++;
+//       j++;
+//     }
+
+//     answer.push(j < temperatures.length ? cnt : 0);
+//   }
+
+//   return answer;
+// }
 
 /*
   Example 1:

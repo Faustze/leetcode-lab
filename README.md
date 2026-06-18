@@ -61,46 +61,46 @@ Total: 33 problems
 
 ### easy (23 files)
 
-| # | Title | Difficulty |
-|---|-------|------------|
-| 104 | Maximum Depth of Binary Tree | ? |
-| 345 | Reverse Vowels of a String | ? |
-| 448 | Find All Numbers Disappeared in an Array | ? |
-| 485 | Max Consecutive Ones | ? |
-| 605 | Can Place Flowers | ? |
-| 645 | Set Mismatch | ? |
-| 1071 | Greatest Common Divisor of Strings | ? |
-| 1365 | How Many Numbers Are Smaller Than the Current Number | ? |
-| 1431 | Kids With the Greatest Number of Candies | ? |
-| 1470 | Shuffle the Array | ? |
-| 1768 | Merge Strings Alternately | ? |
-| 2620 | Counter | ? |
-| 2626 | Array Reduce Transformation | ? |
-| 2629 | Function Composition | ? |
-| 2665 | Counter II | ? |
-| 2666 | Allow One Function Call | ? |
-| 2677 | Chunk Array | ? |
-| 2703 | Return Length of Arguments Passed | ? |
-| 2715 | Timeout Cancellation | ? |
-| 2723 | Add Two Promises | ? |
-| 2724 | Sort By | ? |
-| 2725 | Interval Cancellation | ? |
-| 2726 | Calculator with Method Chaining | ? |
+| #    | Title                                                | Difficulty |
+| ---- | ---------------------------------------------------- | ---------- |
+| 104  | Maximum Depth of Binary Tree                         | ?          |
+| 345  | Reverse Vowels of a String                           | ?          |
+| 448  | Find All Numbers Disappeared in an Array             | ?          |
+| 485  | Max Consecutive Ones                                 | ?          |
+| 605  | Can Place Flowers                                    | ?          |
+| 645  | Set Mismatch                                         | ?          |
+| 1071 | Greatest Common Divisor of Strings                   | ?          |
+| 1365 | How Many Numbers Are Smaller Than the Current Number | ?          |
+| 1431 | Kids With the Greatest Number of Candies             | ?          |
+| 1470 | Shuffle the Array                                    | ?          |
+| 1768 | Merge Strings Alternately                            | ?          |
+| 2620 | Counter                                              | ?          |
+| 2626 | Array Reduce Transformation                          | ?          |
+| 2629 | Function Composition                                 | ?          |
+| 2665 | Counter II                                           | ?          |
+| 2666 | Allow One Function Call                              | ?          |
+| 2677 | Chunk Array                                          | ?          |
+| 2703 | Return Length of Arguments Passed                    | ?          |
+| 2715 | Timeout Cancellation                                 | ?          |
+| 2723 | Add Two Promises                                     | ?          |
+| 2724 | Sort By                                              | ?          |
+| 2725 | Interval Cancellation                                | ?          |
+| 2726 | Calculator with Method Chaining                      | ?          |
 
 ### medium (10 files)
 
-| # | Title | Difficulty |
-|---|-------|------------|
-| 150 | Evaluate Reverse Polish Notation | ? |
-| 636 | Exclusive Time of Functions | ? |
-| 1441 | Build an Array With Stack Operations | ? |
-| 2622 | Cache With Time Limit | ? |
-| 2623 | Memoize | ? |
-| 2627 | Debounce | ? |
-| 2631 | Group By | ? |
-| 2637 | Promise Time Limit | ? |
-| 2693 | Call Function with Custom Context | ? |
-| 2721 | Execute Asynchronous Functions in Parallel | ? |
+| #    | Title                                      | Difficulty |
+| ---- | ------------------------------------------ | ---------- |
+| 150  | Evaluate Reverse Polish Notation           | ?          |
+| 636  | Exclusive Time of Functions                | ?          |
+| 1441 | Build an Array With Stack Operations       | ?          |
+| 2622 | Cache With Time Limit                      | ?          |
+| 2623 | Memoize                                    | ?          |
+| 2627 | Debounce                                   | ?          |
+| 2631 | Group By                                   | ?          |
+| 2637 | Promise Time Limit                         | ?          |
+| 2693 | Call Function with Custom Context          | ?          |
+| 2721 | Execute Asynchronous Functions in Parallel | ?          |
 
 ## Customization
 
