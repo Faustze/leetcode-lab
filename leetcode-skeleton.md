@@ -8,16 +8,17 @@ Always prepare the task in TypeScript.
 Create a TypeScript file that preserves the task statement and gives the user a clean place to solve it locally.
 Use LeetCode's TypeScript language option for the exact starter code, function signature, class shape, method names, and starter types.
 
-Use `src/add-two-promises.ts` as the style reference.
+Use `solutions/easy/2723-add-two-promises.ts` as the style reference.
 
 ## Target File
 
-- Put the file in `src/`.
+- Put the file in `solutions/` (the root of the solutions directory).
 - Name it from the LeetCode slug:
   - `https://leetcode.com/problems/memoize/` -> `memoize.ts`
   - `https://leetcode.com/problems/allow-one-function-call/` -> `allow-one-function-call.ts`
 - Use kebab-case.
 - If a file already exists, update it only if the user clearly wants that.
+- After creating, run `npm run update` to classify by difficulty and topic.
 
 ## File Shape
 
