@@ -13,10 +13,11 @@ Use `solutions/easy/2723-add-two-promises.ts` as the style reference.
 ## Target File
 
 - Put the file in `solutions/` (the root of the solutions directory).
-- Name it from the LeetCode slug:
-  - `https://leetcode.com/problems/memoize/` -> `memoize.ts`
-  - `https://leetcode.com/problems/allow-one-function-call/` -> `allow-one-function-call.ts`
-- Use kebab-case.
+- Name it with the problem number prefix followed by the kebab-case slug:
+  - `https://leetcode.com/problems/memoize/` -> `2623-memoize.ts`
+  - `https://leetcode.com/problems/allow-one-function-call/` -> `2666-allow-one-function-call.ts`
+  - `https://leetcode.com/problems/daily-temperatures/` -> `739-daily-temperatures.ts`
+- Format: `NNNN-problem-name.ts` (zero-padded number, dash, kebab-case slug).
 - If a file already exists, update it only if the user clearly wants that.
 - After creating, run `npm run update` to classify by difficulty and topic.
 

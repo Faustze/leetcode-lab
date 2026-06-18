@@ -123,9 +123,10 @@ def classify_by_difficulty(directory, difficulty_map):
     for level_name in level_names.values():
         os.makedirs(os.path.join(directory, level_name), exist_ok=True)
 
-    for filepath, filename in discover_ts_files(directory):
+    for filepath, filename in discover_ts_files(directory, recursive=False):
         num = extract_number(filename)
         if num is None:
+            print(f"  SKIP: {filename} (no problem number prefix, expected NNNN-name.ts)")
             continue
         level = difficulty_map.get(num)
         dest_name = level_names.get(level)
@@ -133,7 +134,7 @@ def classify_by_difficulty(directory, difficulty_map):
             moved["unknown"].append(filename)
             continue
         dest = os.path.join(directory, dest_name, filename)
-        if filepath != dest:
+        if os.path.abspath(filepath) != os.path.abspath(dest):
             shutil.move(filepath, dest)
             moved[dest_name].append(filename)
             print(f"  {filename} -> {dest_name}/")
