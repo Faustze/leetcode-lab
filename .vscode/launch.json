@@ -1,0 +1,34 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug TSX: Current File",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "tsx",
+      "runtimeArgs": [
+        "${file}"
+      ],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "sourceMaps": true
+    },
+    {
+      "name": "Run TSX: Current File (no debug)",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "tsx",
+      "runtimeArgs": [
+        "${file}"
+      ],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
+    }
+  ]
+}
