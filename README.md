@@ -6,8 +6,8 @@ Personal LeetCode solutions with a built-in TypeScript debugger and automated ta
 
 ```bash
 solutions/
-├── easy/            # 23 problems
-├── medium/            # 10 problems
+├── easy/            # 24 problems
+├── medium/            # 11 problems
 └── by-topic/        # 17 topic folders
 ```
 
@@ -57,12 +57,13 @@ python3 scripts/reclassify.py --topic --dir solutions/custom
 
 ## Tasks
 
-Total: 33 problems
+Total: 35 problems
 
-### easy (23 files)
+### easy (24 files)
 
 | #    | Title                                                | Difficulty |
 | ---- | ---------------------------------------------------- | ---------- |
+| 67   | Add Binary                                           | ?          |
 | 104  | Maximum Depth of Binary Tree                         | ?          |
 | 345  | Reverse Vowels of a String                           | ?          |
 | 448  | Find All Numbers Disappeared in an Array             | ?          |
@@ -87,12 +88,13 @@ Total: 33 problems
 | 2725 | Interval Cancellation                                | ?          |
 | 2726 | Calculator with Method Chaining                      | ?          |
 
-### medium (10 files)
+### medium (11 files)
 
 | #    | Title                                      | Difficulty |
 | ---- | ------------------------------------------ | ---------- |
 | 150  | Evaluate Reverse Polish Notation           | ?          |
 | 636  | Exclusive Time of Functions                | ?          |
+| 739  | Daily Temperatures                         | ?          |
 | 1441 | Build an Array With Stack Operations       | ?          |
 | 2622 | Cache With Time Limit                      | ?          |
 | 2623 | Memoize                                    | ?          |
