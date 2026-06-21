@@ -33,7 +33,7 @@ def fetch_problem_info():
         qid = stat.get("frontend_question_id")
         if qid is None:
             continue
-        level = stat.get("difficulty", {}).get("level", 0)
+        level = item.get("difficulty", {}).get("level", 0)
         diff = {1: "Easy", 2: "Medium", 3: "Hard"}.get(level, "?")
         title = stat.get("question__title", "")
         info[qid] = {"title": title, "diff": diff}

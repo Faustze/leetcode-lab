@@ -42,21 +42,11 @@ Use the `leetcode-skeleton.md` skill — send a LeetCode URL and it generates a 
 `scripts/reclassify.py` classifies problems by topic using LeetCode GraphQL API:
 
 ```bash
-# Classify all problems by topic
+# Classify by topic (moves files into topic subdirectories)
 python3 scripts/reclassify.py
-
-# Classify a single problem by slug
-python3 scripts/reclassify.py --file 1475-final-prices-with-a-special-discount-in-a-shop
 
 # For a specific directory
 python3 scripts/reclassify.py --dir solutions/custom
-```
-
-Or via npm:
-
-```bash
-# Classify a single problem
-npm run classify -- <slug>
 ```
 
 ## Tasks
@@ -67,66 +57,66 @@ Total: 40 problems
 
 | #    | Title                                                | Difficulty |
 | ---- | ---------------------------------------------------- | ---------- |
-| 150  | Evaluate Reverse Polish Notation                     | ?          |
-| 268  | Missing Number                                       | ?          |
-| 283  | Move Zeroes                                          | ?          |
-| 448  | Find All Numbers Disappeared in an Array             | ?          |
-| 485  | Max Consecutive Ones                                 | ?          |
-| 605  | Can Place Flowers                                    | ?          |
-| 636  | Exclusive Time of Functions                          | ?          |
-| 645  | Set Mismatch                                         | ?          |
-| 739  | Daily Temperatures                                   | ?          |
-| 1365 | How Many Numbers Are Smaller Than the Current Number | ?          |
-| 1431 | Kids With the Greatest Number of Candies             | ?          |
-| 1441 | Build an Array With Stack Operations                 | ?          |
-| 1470 | Shuffle the Array                                    | ?          |
-| 1475 | Final Prices With a Special Discount in a Shop       | ?          |
+| 150  | Evaluate Reverse Polish Notation                     | Medium     |
+| 268  | Missing Number                                       | Easy       |
+| 283  | Move Zeroes                                          | Easy       |
+| 448  | Find All Numbers Disappeared in an Array             | Easy       |
+| 485  | Max Consecutive Ones                                 | Easy       |
+| 605  | Can Place Flowers                                    | Easy       |
+| 636  | Exclusive Time of Functions                          | Medium     |
+| 645  | Set Mismatch                                         | Easy       |
+| 739  | Daily Temperatures                                   | Medium     |
+| 1365 | How Many Numbers Are Smaller Than the Current Number | Easy       |
+| 1431 | Kids With the Greatest Number of Candies             | Easy       |
+| 1441 | Build an Array With Stack Operations                 | Medium     |
+| 1470 | Shuffle the Array                                    | Easy       |
+| 1475 | Final Prices With a Special Discount in a Shop       | Easy       |
 
 ### Math (2 files)
 
 | #    | Title                              | Difficulty |
 | ---- | ---------------------------------- | ---------- |
-| 67   | Add Binary                         | ?          |
-| 1071 | Greatest Common Divisor of Strings | ?          |
+| 67   | Add Binary                         | Easy       |
+| 1071 | Greatest Common Divisor of Strings | Easy       |
 
 ### Tree (1 files)
 
 | #   | Title                        | Difficulty |
 | --- | ---------------------------- | ---------- |
-| 104 | Maximum Depth of Binary Tree | ?          |
+| 104 | Maximum Depth of Binary Tree | Easy       |
 
 ### Two Pointers (4 files)
 
 | #    | Title                      | Difficulty |
 | ---- | -------------------------- | ---------- |
-| 125  | Valid Palindrome           | ?          |
-| 151  | Reverse Words in a String  | ?          |
-| 345  | Reverse Vowels of a String | ?          |
-| 1768 | Merge Strings Alternately  | ?          |
+| 125  | Valid Palindrome           | Easy       |
+| 151  | Reverse Words in a String  | Medium     |
+| 345  | Reverse Vowels of a String | Easy       |
+| 1768 | Merge Strings Alternately  | Easy       |
 
 ### Untagged (19 files)
 
 | #    | Title                                      | Difficulty |
 | ---- | ------------------------------------------ | ---------- |
-| 2620 | Counter                                    | ?          |
-| 2622 | Cache With Time Limit                      | ?          |
-| 2623 | Memoize                                    | ?          |
-| 2626 | Array Reduce Transformation                | ?          |
-| 2627 | Debounce                                   | ?          |
-| 2629 | Function Composition                       | ?          |
-| 2631 | Group By                                   | ?          |
-| 2637 | Promise Time Limit                         | ?          |
-| 2665 | Counter II                                 | ?          |
-| 2666 | Allow One Function Call                    | ?          |
-| 2677 | Chunk Array                                | ?          |
-| 2693 | Call Function with Custom Context          | ?          |
-| 2703 | Return Length of Arguments Passed          | ?          |
-| 2715 | Timeout Cancellation                       | ?          |
-| 2721 | Execute Asynchronous Functions in Parallel | ?          |
-| 2723 | Add Two Promises                           | ?          |
-| 2724 | Sort By                                    | ?          |
-| 2725 | Interval Cancellation                      | ?          |
-| 2726 | Calculator with Method Chaining            | ?          |
+| 2620 | Counter                                    | Easy       |
+| 2622 | Cache With Time Limit                      | Medium     |
+| 2623 | Memoize                                    | Medium     |
+| 2626 | Array Reduce Transformation                | Easy       |
+| 2627 | Debounce                                   | Medium     |
+| 2629 | Function Composition                       | Easy       |
+| 2631 | Group By                                   | Medium     |
+| 2637 | Promise Time Limit                         | Medium     |
+| 2665 | Counter II                                 | Easy       |
+| 2666 | Allow One Function Call                    | Easy       |
+| 2677 | Chunk Array                                | Easy       |
+| 2693 | Call Function with Custom Context          | Medium     |
+| 2703 | Return Length of Arguments Passed          | Easy       |
+| 2715 | Timeout Cancellation                       | Easy       |
+| 2721 | Execute Asynchronous Functions in Parallel | Medium     |
+| 2723 | Add Two Promises                           | Easy       |
+| 2724 | Sort By                                    | Easy       |
+| 2725 | Interval Cancellation                      | Easy       |
+| 2726 | Calculator with Method Chaining            | Easy       |
 
 ## Customization
 
