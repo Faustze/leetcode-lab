@@ -8,18 +8,18 @@ Always prepare the task in TypeScript.
 Create a TypeScript file that preserves the task statement and gives the user a clean place to solve it locally.
 Use LeetCode's TypeScript language option for the exact starter code, function signature, class shape, method names, and starter types.
 
-Use `solutions/easy/2723-add-two-promises.ts` as the style reference.
+Use `solutions/Array/2723-add-two-promises.ts` as the style reference.
 
 ## Target File
 
-- Put the file in `solutions/` (the root of the solutions directory).
+- Put the file in `solutions/<Topic>/` based on the problem's primary topic tag.
 - Name it with the problem number prefix followed by the kebab-case slug:
   - `https://leetcode.com/problems/memoize/` -> `2623-memoize.ts`
   - `https://leetcode.com/problems/allow-one-function-call/` -> `2666-allow-one-function-call.ts`
   - `https://leetcode.com/problems/daily-temperatures/` -> `739-daily-temperatures.ts`
 - Format: `NNNN-problem-name.ts` (zero-padded number, dash, kebab-case slug).
 - If a file already exists, update it only if the user clearly wants that.
-- After creating, run `npm run update` to classify by difficulty and topic.
+- After creating, run `npm run update` to update README.
 
 ## File Shape
 
@@ -143,6 +143,8 @@ class TimeLimitedCache {
    - TypeScript signature
    - examples
    - constraints if useful
-4. Create the file with the shape above.
-5. Validate TypeScript syntax when possible.
-6. Tell the user the created path.
+4. Fetch the problem's topic tags from LeetCode GraphQL API (use the `fetch_topic_map` function from `scripts/reclassify.py` as reference).
+5. Determine the primary topic (first tag, or "Untagged" if none).
+6. Create the file in `solutions/<PrimaryTopic>/NNNN-problem-name.ts` with the shape above.
+7. Validate TypeScript syntax when possible.
+8. Tell the user the created path.

@@ -2,7 +2,7 @@
 """
 Update README.md based on current solutions/ directory structure.
 
-Reads all .ts files, fetches problem metadata from LeetCode API,
+Reads all .ts files from topic subdirectories, fetches problem metadata from LeetCode API,
 and regenerates the entire README with correct paths, counts, and task tables.
 
 Usage:
@@ -41,36 +41,27 @@ def fetch_problem_info():
 
 
 def scan_solutions():
-    """Scan solutions/ and return {subdir: [(num, filename, abs_path)]}."""
+    """Scan solutions/ topic subdirectories and return {topic: [(num, filename)]}."""
     results = {}
-    for root, dirs, files in os.walk(SOLUTIONS_DIR):
-        dirs[:] = [d for d in dirs if d not in ("by-topic", "node_modules", ".git")]
-        for f in sorted(files):
+    for entry in sorted(os.listdir(SOLUTIONS_DIR)):
+        entry_path = os.path.join(SOLUTIONS_DIR, entry)
+        if not os.path.isdir(entry_path) or entry.startswith("."):
+            continue
+        topic = entry
+        for f in sorted(os.listdir(entry_path)):
             if not f.endswith(".ts"):
                 continue
             m = re.match(r"^(\d+)-", f)
             if not m:
                 continue
             num = int(m.group(1))
-            subdir = os.path.relpath(root, SOLUTIONS_DIR)
-            if subdir == ".":
-                subdir = ""
-            results.setdefault(subdir, []).append((num, f))
+            results.setdefault(topic, []).append((num, f))
     return results
 
 
-def count_files_by_extension(directory, ext=".ts"):
-    """Count files with given extension recursively."""
-    count = 0
-    for root, dirs, files in os.walk(directory):
-        dirs[:] = [d for d in dirs if d not in ("by-topic", "node_modules", ".git")]
-        count += sum(1 for f in files if f.endswith(ext))
-    return count
-
-
-def generate_readme(problem_info, solutions):
+def generate_readme(problem_info, by_topic):
     """Generate README.md content."""
-    total = sum(len(files) for files in solutions.values())
+    total = sum(len(files) for files in by_topic.values())
 
     lines = []
     lines.append("# leetcode-lab")
@@ -84,23 +75,16 @@ def generate_readme(problem_info, solutions):
     lines.append("```bash")
     lines.append("solutions/")
 
-    # Build tree
-    subdirs = sorted(solutions.keys())
-    for i, subdir in enumerate(subdirs):
-        is_last = i == len(subdir) - 1
+    topics = sorted(by_topic.keys())
+    for i, topic in enumerate(topics):
+        is_last = i == len(topics) - 1
         prefix = "└── " if is_last else "├── "
-        count = len(solutions[subdir])
-        lines.append(f"{prefix}{subdir}/            # {count} problems")
-
-    # Check for by-topic
-    by_topic_dir = os.path.join(SOLUTIONS_DIR, "by-topic")
-    if os.path.isdir(by_topic_dir):
-        topic_count = sum(1 for _ in os.listdir(by_topic_dir) if os.path.isdir(os.path.join(by_topic_dir, _)))
-        lines.append(f"└── by-topic/        # {topic_count} topic folders")
+        count = len(by_topic[topic])
+        lines.append(f"{prefix}{topic}/   # {count} problems")
 
     lines.append("```")
     lines.append("")
-    lines.append("Files are named as `NNNN-problem-name.ts` and grouped by difficulty and topic automatically.")
+    lines.append("Files are named as `NNNN-problem-name.ts` and grouped by topic.")
     lines.append("")
 
     # --- Debugging ---
@@ -125,30 +109,22 @@ def generate_readme(problem_info, solutions):
     lines.append("")
     lines.append("### Manually")
     lines.append("")
-    lines.append("1. Create `solutions/NNNN-problem-name.ts` with the task number prefix")
-    lines.append("2. Run the classification script to organize it")
+    lines.append("1. Create `solutions/<Topic>/NNNN-problem-name.ts` with the task number prefix")
+    lines.append("2. Run the classification script to organize it by topic")
     lines.append("")
 
     # --- Classification Script ---
     lines.append("## Classification Script")
     lines.append("")
-    lines.append("Single script `scripts/reclassify.py` handles both difficulty and topic classification:")
+    lines.append("`scripts/reclassify.py` classifies problems by topic using LeetCode GraphQL API:")
     lines.append("")
     lines.append("```bash")
-    lines.append("# Classify by difficulty (moves files into easy/medium/hard/)")
-    lines.append("python3 scripts/reclassify.py --difficulty")
-    lines.append("")
-    lines.append("# Classify by topic (creates by-topic/ with symlinks)")
-    lines.append("python3 scripts/reclassify.py --topic")
-    lines.append("")
-    lines.append("# Both at once")
-    lines.append("python3 scripts/reclassify.py --all")
+    lines.append("# Classify by topic (moves files into topic subdirectories)")
+    lines.append("python3 scripts/reclassify.py")
     lines.append("")
     lines.append("# For a specific directory")
-    lines.append("python3 scripts/reclassify.py --topic --dir solutions/custom")
+    lines.append("python3 scripts/reclassify.py --dir solutions/custom")
     lines.append("```")
-    lines.append("")
-    lines.append("> **Note:** `by-topic/` is in `.gitignore` — it's regenerated locally and not committed.")
     lines.append("")
 
     # --- Tasks ---
@@ -157,10 +133,9 @@ def generate_readme(problem_info, solutions):
     lines.append(f"Total: {total} problems")
     lines.append("")
 
-    for subdir in subdirs:
-        files = solutions[subdir]
-        label = subdir if subdir else "root"
-        lines.append(f"### {label} ({len(files)} files)")
+    for topic in topics:
+        files = by_topic[topic]
+        lines.append(f"### {topic} ({len(files)} files)")
         lines.append("")
         lines.append("| # | Title | Difficulty |")
         lines.append("|---|-------|------------|")
@@ -192,16 +167,16 @@ def main():
     problem_info = fetch_problem_info()
 
     print("Scanning solutions/...")
-    solutions = scan_solutions()
+    by_topic = scan_solutions()
 
-    if not solutions:
-        print("No .ts files found in solutions/", file=sys.stderr)
+    if not by_topic:
+        print("No .ts files found in solutions/ topic subdirectories", file=sys.stderr)
         sys.exit(1)
 
-    total = sum(len(files) for files in solutions.values())
-    print(f"Found {total} problems in {len(solutions)} groups")
+    total = sum(len(files) for files in by_topic.values())
+    print(f"Found {total} problems in {len(by_topic)} topics")
 
-    content = generate_readme(problem_info, solutions)
+    content = generate_readme(problem_info, by_topic)
 
     if dry_run:
         print("\n--- README preview ---\n")
