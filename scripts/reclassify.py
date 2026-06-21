@@ -62,12 +62,9 @@ def fetch_topic_map(title_slugs):
 # ---------------------------------------------------------------------------
 
 def discover_ts_files(directory):
-    """Return list of (absolute_path, filename) for all .ts files in directory (recursive, skip topic dirs at root)."""
+    """Return list of (absolute_path, filename) for all .ts files in directory (fully recursive)."""
     results = []
     for root, dirs, files in os.walk(directory):
-        # Skip topic directories at root level (they are classification targets)
-        if root == directory:
-            dirs[:] = []
         dirs[:] = [d for d in dirs if d not in ("node_modules", ".git")]
         for f in sorted(files):
             if f.endswith(".ts"):
@@ -92,36 +89,55 @@ def extract_slug(filename):
 # Classification by topic
 # ---------------------------------------------------------------------------
 
-def classify_by_topic(directory, topic_map):
+def classify_by_topic(directory, topic_map, single_file=None):
     """Move .ts files into topic subdirectories grouped by topic tag."""
-    # Collect all files and their topics
+    import tempfile
+
+    if single_file:
+        # Mode: classify a single file in-place (move to correct topic dir)
+        filepath = os.path.abspath(single_file)
+        directory = os.path.dirname(filepath)
+        filename = os.path.basename(filepath)
+        slug = extract_slug(filename)
+        tags = topic_map.get(slug, [])
+        primary_tag = tags[0] if tags else "Untagged"
+
+        tag_dir = os.path.join(directory, primary_tag)
+        os.makedirs(tag_dir, exist_ok=True)
+        dest = os.path.join(tag_dir, filename)
+
+        if os.path.abspath(filepath) != os.path.abspath(dest):
+            shutil.move(filepath, dest)
+            print(f"  {filename} -> {primary_tag}/")
+        else:
+            print(f"  {filename} already in {primary_tag}/")
+        return
+
+    # Mode: classify all files
+    temp_dir = tempfile.mkdtemp()
     files_to_classify = []
 
     for filepath, filename in discover_ts_files(directory):
         slug = extract_slug(filename)
         tags = topic_map.get(slug, [])
         primary_tag = tags[0] if tags else "Untagged"
-        files_to_classify.append((filepath, filename, primary_tag))
+        temp_path = os.path.join(temp_dir, filename)
+        shutil.copy2(filepath, temp_path)
+        files_to_classify.append((temp_path, filename, primary_tag))
 
-    # Remove all existing topic directories (non-.ts dirs in root)
     for entry in os.listdir(directory):
         entry_path = os.path.join(directory, entry)
         if os.path.isdir(entry_path) and not entry.startswith("."):
             shutil.rmtree(entry_path)
 
-    # Move files to topic directories
-    tagged = set()
-    untagged = []
-
-    for filepath, filename, tag in files_to_classify:
+    for temp_path, filename, tag in files_to_classify:
         tag_dir = os.path.join(directory, tag)
         os.makedirs(tag_dir, exist_ok=True)
         dest = os.path.join(tag_dir, filename)
-        if os.path.abspath(filepath) != os.path.abspath(dest):
-            shutil.move(filepath, dest)
-            print(f"  {filename} -> {tag}/")
-        tagged.add(filename)
+        shutil.move(temp_path, dest)
+        print(f"  {filename} -> {tag}/")
 
+    shutil.rmtree(temp_dir)
     print(f"\n  Total: {len(files_to_classify)} files classified")
 
 
@@ -132,23 +148,31 @@ def classify_by_topic(directory, topic_map):
 def main():
     parser = argparse.ArgumentParser(description="Reclassify LeetCode problems by topic")
     parser.add_argument("--dir", default=None, help="Target directory (default: solutions/)")
+    parser.add_argument("--file", default=None, help="Classify a single file by slug (e.g. 1475-final-prices-with-a-special-discount-in-a-shop)")
     args = parser.parse_args()
 
     target_dir = args.dir or os.path.join(REPO_ROOT, "solutions")
     target_dir = os.path.abspath(target_dir)
 
-    if not os.path.isdir(target_dir):
-        print(f"Error: directory not found: {target_dir}", file=sys.stderr)
-        sys.exit(1)
+    if args.file:
+        # Single file mode
+        slug = args.file
+        print(f"Classifying single file: {slug}\n")
+        topic_map = fetch_topic_map([slug])
+        classify_by_topic(target_dir, topic_map, single_file=slug)
+    else:
+        # Full mode
+        if not os.path.isdir(target_dir):
+            print(f"Error: directory not found: {target_dir}", file=sys.stderr)
+            sys.exit(1)
 
-    print(f"Target: {target_dir}\n")
-
-    print("=== Classification by topic ===")
-    slugs = []
-    for _, filename in discover_ts_files(target_dir):
-        slugs.append(extract_slug(filename))
-    topic_map = fetch_topic_map(slugs)
-    classify_by_topic(target_dir, topic_map)
+        print(f"Target: {target_dir}\n")
+        print("=== Classification by topic ===")
+        slugs = []
+        for _, filename in discover_ts_files(target_dir):
+            slugs.append(extract_slug(filename))
+        topic_map = fetch_topic_map(slugs)
+        classify_by_topic(target_dir, topic_map)
     print()
 
 

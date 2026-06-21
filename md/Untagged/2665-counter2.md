@@ -8,6 +8,12 @@
 > - reset() sets the current value to init and then returns it.
 
 ```ts
+interface Counter {
+  increment: () => number
+  decrement: () => number
+  reset: () => number
+}
+
 function createCounter(init: number): Counter {
   let value = init
 

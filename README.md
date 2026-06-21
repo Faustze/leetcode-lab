@@ -6,10 +6,9 @@ Personal LeetCode solutions with a built-in TypeScript debugger and automated ta
 
 ```bash
 solutions/
-├── Array/   # 11 problems
-├── Binary Tree/   # 1 problems
-├── Bit Manipulation/   # 1 problems
-├── String/   # 1 problems
+├── Array/   # 13 problems
+├── Math/   # 2 problems
+├── Tree/   # 1 problems
 ├── Two Pointers/   # 4 problems
 └── Untagged/   # 19 problems
 ```
@@ -52,74 +51,71 @@ python3 scripts/reclassify.py --dir solutions/custom
 
 ## Tasks
 
-Total: 37 problems
+Total: 39 problems
 
-### Array (11 files)
+### Array (13 files)
 
-| #    | Title                                                | Difficulty |
-| ---- | ---------------------------------------------------- | ---------- |
-| 150  | Evaluate Reverse Polish Notation                     | ?          |
-| 448  | Find All Numbers Disappeared in an Array             | ?          |
-| 485  | Max Consecutive Ones                                 | ?          |
-| 605  | Can Place Flowers                                    | ?          |
-| 636  | Exclusive Time of Functions                          | ?          |
-| 645  | Set Mismatch                                         | ?          |
-| 739  | Daily Temperatures                                   | ?          |
-| 1365 | How Many Numbers Are Smaller Than the Current Number | ?          |
-| 1431 | Kids With the Greatest Number of Candies             | ?          |
-| 1441 | Build an Array With Stack Operations                 | ?          |
-| 1470 | Shuffle the Array                                    | ?          |
+| # | Title | Difficulty |
+|---|-------|------------|
+| 150 | Evaluate Reverse Polish Notation | ? |
+| 268 | Missing Number | ? |
+| 448 | Find All Numbers Disappeared in an Array | ? |
+| 485 | Max Consecutive Ones | ? |
+| 605 | Can Place Flowers | ? |
+| 636 | Exclusive Time of Functions | ? |
+| 645 | Set Mismatch | ? |
+| 739 | Daily Temperatures | ? |
+| 1365 | How Many Numbers Are Smaller Than the Current Number | ? |
+| 1431 | Kids With the Greatest Number of Candies | ? |
+| 1441 | Build an Array With Stack Operations | ? |
+| 1470 | Shuffle the Array | ? |
+| 1475 | Final Prices With a Special Discount in a Shop | ? |
 
-### Binary Tree (1 files)
+### Math (2 files)
 
-| #   | Title                        | Difficulty |
-| --- | ---------------------------- | ---------- |
-| 104 | Maximum Depth of Binary Tree | ?          |
+| # | Title | Difficulty |
+|---|-------|------------|
+| 67 | Add Binary | ? |
+| 1071 | Greatest Common Divisor of Strings | ? |
 
-### Bit Manipulation (1 files)
+### Tree (1 files)
 
-| #   | Title      | Difficulty |
-| --- | ---------- | ---------- |
-| 67  | Add Binary | ?          |
-
-### String (1 files)
-
-| #    | Title                              | Difficulty |
-| ---- | ---------------------------------- | ---------- |
-| 1071 | Greatest Common Divisor of Strings | ?          |
+| # | Title | Difficulty |
+|---|-------|------------|
+| 104 | Maximum Depth of Binary Tree | ? |
 
 ### Two Pointers (4 files)
 
-| #    | Title                      | Difficulty |
-| ---- | -------------------------- | ---------- |
-| 125  | Valid Palindrome           | ?          |
-| 151  | Reverse Words in a String  | ?          |
-| 345  | Reverse Vowels of a String | ?          |
-| 1768 | Merge Strings Alternately  | ?          |
+| # | Title | Difficulty |
+|---|-------|------------|
+| 125 | Valid Palindrome | ? |
+| 151 | Reverse Words in a String | ? |
+| 345 | Reverse Vowels of a String | ? |
+| 1768 | Merge Strings Alternately | ? |
 
 ### Untagged (19 files)
 
-| #    | Title                                      | Difficulty |
-| ---- | ------------------------------------------ | ---------- |
-| 2620 | Counter                                    | ?          |
-| 2622 | Cache With Time Limit                      | ?          |
-| 2623 | Memoize                                    | ?          |
-| 2626 | Array Reduce Transformation                | ?          |
-| 2627 | Debounce                                   | ?          |
-| 2629 | Function Composition                       | ?          |
-| 2631 | Group By                                   | ?          |
-| 2637 | Promise Time Limit                         | ?          |
-| 2665 | Counter II                                 | ?          |
-| 2666 | Allow One Function Call                    | ?          |
-| 2677 | Chunk Array                                | ?          |
-| 2693 | Call Function with Custom Context          | ?          |
-| 2703 | Return Length of Arguments Passed          | ?          |
-| 2715 | Timeout Cancellation                       | ?          |
-| 2721 | Execute Asynchronous Functions in Parallel | ?          |
-| 2723 | Add Two Promises                           | ?          |
-| 2724 | Sort By                                    | ?          |
-| 2725 | Interval Cancellation                      | ?          |
-| 2726 | Calculator with Method Chaining            | ?          |
+| # | Title | Difficulty |
+|---|-------|------------|
+| 2620 | Counter | ? |
+| 2622 | Cache With Time Limit | ? |
+| 2623 | Memoize | ? |
+| 2626 | Array Reduce Transformation | ? |
+| 2627 | Debounce | ? |
+| 2629 | Function Composition | ? |
+| 2631 | Group By | ? |
+| 2637 | Promise Time Limit | ? |
+| 2665 | Counter II | ? |
+| 2666 | Allow One Function Call | ? |
+| 2677 | Chunk Array | ? |
+| 2693 | Call Function with Custom Context | ? |
+| 2703 | Return Length of Arguments Passed | ? |
+| 2715 | Timeout Cancellation | ? |
+| 2721 | Execute Asynchronous Functions in Parallel | ? |
+| 2723 | Add Two Promises | ? |
+| 2724 | Sort By | ? |
+| 2725 | Interval Cancellation | ? |
+| 2726 | Calculator with Method Chaining | ? |
 
 ## Customization
 

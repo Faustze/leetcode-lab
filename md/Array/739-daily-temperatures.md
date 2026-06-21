@@ -26,6 +26,27 @@ function dailyTemperatures(temperatures: number[]): number[] {
 console.log(dailyTemperatures([73, 74, 75, 71, 69, 72, 76, 73])); // [1,1,4,2,1,1,0,0]
 console.log(dailyTemperatures([30, 40, 50, 60])); // [1,1,1,0]
 console.log(dailyTemperatures([30, 60, 90])); // [1,1,0]
+
+/**
+ * O(n^2)
+ */
+// function dailyTemperatures(temperatures: number[]): number[] {
+//   const answer: number[] = [];
+
+//   for (let i = 0; i < temperatures.length; i++) {
+//     let j = i + 1;
+//     let cnt = 1;
+
+//     while (j < temperatures.length && temperatures[i] >= temperatures[j]) {
+//       cnt++;
+//       j++;
+//     }
+
+//     answer.push(j < temperatures.length ? cnt : 0);
+//   }
+
+//   return answer;
+// }
 ```
 
 ```md

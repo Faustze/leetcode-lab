@@ -40,6 +40,22 @@ class TimeLimitedCache {
     return this.cache.size
   }
 }
+
+/*
+const timeLimitedCache = new TimeLimitedCache()
+setTimeout(() => console.log(timeLimitedCache.set(1, 42, 100)), 0) // false
+setTimeout(() => console.log(timeLimitedCache.get(1)), 50) // 42
+setTimeout(() => console.log(timeLimitedCache.count(0)), 50) // 1
+setTimeout(() => console.log(timeLimitedCache.get(1)), 150) // -1
+*/
+
+const timeLimitedCache = new TimeLimitedCache()
+setTimeout(() => console.log(timeLimitedCache.set(1, 42, 50)), 0) // false
+setTimeout(() => console.log(timeLimitedCache.set(1, 50, 100)), 40) // true
+setTimeout(() => console.log(timeLimitedCache.get(1)), 50) // 50
+setTimeout(() => console.log(timeLimitedCache.get(1)), 120)// 50
+setTimeout(() => console.log(timeLimitedCache.get(1)), 200) // -1
+setTimeout(() => console.log(timeLimitedCache.count()), 250) // 0
 ```
 
 ```md

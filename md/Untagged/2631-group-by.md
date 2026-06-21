@@ -9,7 +9,14 @@
 > Constraints: 0 <= array.length <= 10^5 fn returns a string
 
 ```ts
-const result: Record<string, T[]> = {}
+interface Array<T> {
+    groupBy: (fn: (item: T) => string) => Record<string, T[]>
+  }
+}
+
+// eslint-disable-next-line no-extend-native
+Array.prototype.groupBy = function <T>(this: T[], fn: (item: T) => string): Record<string, T[]> {
+  const result: Record<string, T[]> = {}
 
   for (const item of this) {
     const key = fn(item)

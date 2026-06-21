@@ -83,20 +83,28 @@ def parse_ts_file(content):
 
     description = ' '.join(desc_lines).strip()
 
-    # Extract code: from function/class declaration until we hit a line
-    # that starts with '/*' (beginning of examples block) or end of file
+    # Extract code: from first type/function/class declaration until we hit
+    # the examples block comment (/* followed by Example)
     code_lines = []
     started = False
 
-    for line in lines:
+    for i, line in enumerate(lines):
         stripped = line.strip()
-        # Stop when we hit the examples block comment
+        # Stop when we hit a block comment that starts with /* and has Example on next line
         if started and stripped.startswith('/*'):
-            break
-        # Start capturing from function or class declaration
+            # Check next non-empty line
+            for j in range(i + 1, min(i + 3, len(lines))):
+                next_content = lines[j].strip().lstrip('*').strip()
+                if next_content.startswith('Example'):
+                    break
+            else:
+                # No Example found, keep going
+                pass
+            if j < len(lines) and lines[j].strip().lstrip('*').strip().startswith('Example'):
+                break
+        # Start capturing from first type, function or class declaration
         if not started:
-            if re.search(r'^(function|class|type|const|let|var)\s', stripped) or \
-               re.search(r'^(export\s+)?(function|class)\s', stripped):
+            if re.search(r'^(type|function|class|interface|enum)\s', stripped):
                 started = True
 
         if started:
@@ -104,17 +112,30 @@ def parse_ts_file(content):
 
     code = '\n'.join(code_lines).strip()
 
-    # Extract examples (block comment after code)
+    # Extract examples: find the last block comment that contains "Example 1:"
+    # This ensures we get the final examples block, not intermediate comments
     examples = ""
-    last_block_start = -1
+    block_starts = []
     for i, line in enumerate(lines):
         if line.strip().startswith('/*'):
-            last_block_start = i
+            block_starts.append(i)
 
-    if last_block_start >= 0:
+    # Find the last block where content contains "Example 1:"
+    example_block_start = -1
+    for start in reversed(block_starts):
+        # Check block content for "Example 1:"
+        block_content = []
+        for j in range(start, min(start + 10, len(lines))):
+            block_content.append(lines[j])
+        block_text = ' '.join(block_content)
+        if 'Example 1:' in block_text:
+            example_block_start = start
+            break
+
+    if example_block_start >= 0:
         example_lines = []
         in_block = False
-        for i in range(last_block_start, len(lines)):
+        for i in range(example_block_start, len(lines)):
             line = lines[i]
             if line.strip().startswith('/*'):
                 in_block = True
