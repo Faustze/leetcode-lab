@@ -11,9 +11,6 @@ function isPalindrome(s: string): boolean {
   return lc === lc.split("").reverse().join("");
 }
 
-/**
- * without reverse
- */
 // function isPalindrome(s: string): boolean {
 //   const lc = s.toLowerCase().replace(/[^a-z0-9]/g, "");
 //   let i = 0,

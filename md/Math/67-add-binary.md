@@ -14,9 +14,6 @@ function addBinary(a: string, b: string): string {
 console.log(addBinary("11", "1")); // "100"
 console.log(addBinary("1010", "1011")); // "10101"
 
-/**
- * v2
- */
 // function addBinary(a: string, b: string): string {
 //   let i = a.length - 1;
 //   let j = b.length - 1;

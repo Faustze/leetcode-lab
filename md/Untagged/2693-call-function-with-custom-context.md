@@ -30,6 +30,9 @@ function add(this: { a: number }, b: number) {
 }
 
 console.log(add.callPolyfill({ a: 5 }, 7)) // 12
+
+
+export {}
 ```
 
 ```md

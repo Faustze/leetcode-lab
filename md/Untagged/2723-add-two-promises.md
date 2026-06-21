@@ -5,6 +5,24 @@
 > The returned promise should resolve with the sum of the two numbers.
 > Constraints: - promise1 and promise2 are promises that resolve with a number
 
+```ts
+async function addTwoPromises(
+  promise1: Promise<number>,
+  promise2: Promise<number>,
+): Promise<number> {
+  return Promise.all([promise1, promise2]).then(([result1, result2]) => result1 + result2)
+}
+
+addTwoPromises(Promise.resolve(2), Promise.resolve(2))
+  .then(console.log) // 4
+
+addTwoPromises(Promise.resolve(2), Promise.resolve(5))
+  .then(console.log) // 7
+
+addTwoPromises(Promise.resolve(10), Promise.resolve(-12))
+  .then(console.log) // -2
+```
+
 ```md
 Example 1:
 

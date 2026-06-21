@@ -83,13 +83,22 @@ def parse_ts_file(content):
 
     description = ' '.join(desc_lines).strip()
 
-    # Extract code: from first type/function/class declaration until we hit
+    # Extract code: from first non-comment, non-empty line until we hit
     # the examples block comment (/* followed by Example)
     code_lines = []
     started = False
+    in_block_comment = False
 
     for i, line in enumerate(lines):
         stripped = line.strip()
+        # Track block comment state
+        if '/*' in stripped and '*/' not in stripped:
+            in_block_comment = True
+            continue
+        if in_block_comment:
+            if '*/' in stripped:
+                in_block_comment = False
+            continue
         # Stop when we hit a block comment that starts with /* and has Example on next line
         if started and stripped.startswith('/*'):
             # Check next non-empty line
@@ -102,10 +111,11 @@ def parse_ts_file(content):
                 pass
             if j < len(lines) and lines[j].strip().lstrip('*').strip().startswith('Example'):
                 break
-        # Start capturing from first type, function or class declaration
+        # Start capturing from first non-comment, non-empty line
         if not started:
-            if re.search(r'^(type|function|class|interface|enum)\s', stripped):
-                started = True
+            if stripped == '' or stripped.startswith('//') or stripped.startswith('/*'):
+                continue
+            started = True
 
         if started:
             code_lines.append(line)

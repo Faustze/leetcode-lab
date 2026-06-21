@@ -9,7 +9,8 @@
 > Constraints: 0 <= array.length <= 10^5 fn returns a string
 
 ```ts
-interface Array<T> {
+declare global {
+  interface Array<T> {
     groupBy: (fn: (item: T) => string) => Record<string, T[]>
   }
 }
@@ -36,6 +37,9 @@ Array.prototype.groupBy = function <T>(this: T[], fn: (item: T) => string): Reco
 console.log([{ id: '1' }, { id: '1' }, { id: '2' }].groupBy(item => item.id))
 console.log([[1, 2, 3], [1, 3, 5], [1, 5, 9]].groupBy(list => String(list[0])))
 console.log([1, 2, 3, 4, 5, 6, 7, 8, 9, 10].groupBy(n => String(n > 5)))
+
+
+export {}
 ```
 
 ```md

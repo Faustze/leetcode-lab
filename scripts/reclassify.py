@@ -7,6 +7,7 @@ based on LeetCode GraphQL topic tags. Files already in subdirectories are also c
 
 Usage:
     python3 scripts/reclassify.py                    # classify solutions/ by topic
+    python3 scripts/reclassify.py --file <slug>       # classify a single file
     python3 scripts/reclassify.py --dir solutions/custom   # classify a specific dir
 """
 import argparse

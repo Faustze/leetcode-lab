@@ -7,16 +7,6 @@
 > Constraints: - 0 <= inputs.length <= 10 - 0 <= t <= 1000 - fn returns a promise
 
 ```ts
-function should resolve with the result.
-  - If the execution of fn exceeds the time limit, the time limited function
-    should reject with the string "Time Limit Exceeded".
-
-  Constraints:
-  - 0 <= inputs.length <= 10
-  - 0 <= t <= 1000
-  - fn returns a promise
-*/
-
 type Fn = (...params: any[]) => Promise<any>
 
 function timeLimit(fn: Fn, t: number): Fn {
