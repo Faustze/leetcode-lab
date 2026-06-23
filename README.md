@@ -9,7 +9,7 @@ solutions/
 ├── Array/   # 15 problems
 ├── Math/   # 2 problems
 ├── Tree/   # 1 problems
-├── Two Pointers/   # 4 problems
+├── Two Pointers/   # 5 problems
 └── Untagged/   # 19 problems
 ```
 
@@ -51,7 +51,7 @@ python3 scripts/reclassify.py --dir solutions/custom
 
 ## Tasks
 
-Total: 41 problems
+Total: 42 problems
 
 ### Array (15 files)
 
@@ -86,13 +86,14 @@ Total: 41 problems
 |---|-------|------------|
 | 104 | Maximum Depth of Binary Tree | Easy |
 
-### Two Pointers (4 files)
+### Two Pointers (5 files)
 
 | # | Title | Difficulty |
 |---|-------|------------|
 | 125 | Valid Palindrome | Easy |
 | 151 | Reverse Words in a String | Medium |
 | 345 | Reverse Vowels of a String | Easy |
+| 844 | Backspace String Compare | Easy |
 | 1768 | Merge Strings Alternately | Easy |
 
 ### Untagged (19 files)
