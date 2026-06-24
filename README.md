@@ -6,7 +6,7 @@ Personal LeetCode solutions with a built-in TypeScript debugger and automated ta
 
 ```bash
 solutions/
-├── Array/   # 15 problems
+├── Array/   # 16 problems
 ├── Math/   # 2 problems
 ├── Tree/   # 1 problems
 ├── Two Pointers/   # 5 problems
@@ -51,9 +51,9 @@ python3 scripts/reclassify.py --dir solutions/custom
 
 ## Tasks
 
-Total: 42 problems
+Total: 43 problems
 
-### Array (15 files)
+### Array (16 files)
 
 | # | Title | Difficulty |
 |---|-------|------------|
@@ -64,6 +64,7 @@ Total: 42 problems
 | 485 | Max Consecutive Ones | Easy |
 | 605 | Can Place Flowers | Easy |
 | 636 | Exclusive Time of Functions | Medium |
+| 643 | Maximum Average Subarray I | Easy |
 | 645 | Set Mismatch | Easy |
 | 739 | Daily Temperatures | Medium |
 | 977 | Squares of a Sorted Array | Easy |
