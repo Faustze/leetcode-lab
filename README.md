@@ -7,6 +7,7 @@ Personal LeetCode solutions with a built-in TypeScript debugger and automated ta
 ```bash
 solutions/
 ├── Array/   # 16 problems
+├── Linked List/   # 1 problems
 ├── Math/   # 2 problems
 ├── Tree/   # 1 problems
 ├── Two Pointers/   # 6 problems
@@ -51,7 +52,7 @@ python3 scripts/reclassify.py --dir solutions/custom
 
 ## Tasks
 
-Total: 44 problems
+Total: 45 problems
 
 ### Array (16 files)
 
@@ -73,6 +74,12 @@ Total: 44 problems
 | 1441 | Build an Array With Stack Operations | Medium |
 | 1470 | Shuffle the Array | Easy |
 | 1475 | Final Prices With a Special Discount in a Shop | Easy |
+
+### Linked List (1 files)
+
+| # | Title | Difficulty |
+|---|-------|------------|
+| 206 | Reverse Linked List | Easy |
 
 ### Math (2 files)
 
