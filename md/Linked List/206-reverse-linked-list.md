@@ -16,7 +16,19 @@ class ListNode {
 }
 
 function reverseList(head: ListNode | null): ListNode | null {
-  if (head === null) return nul
+  if (head === null) return null
+
+  let prev: ListNode | null = null
+  let current = head
+
+  while (current !== null) {
+    const next = current.next  // запоминаем следующий узел
+    current.next = prev        // разворачиваем ссылку
+    prev = current             // двигаем prev
+    current = next             // переходим дальше
+  }
+
+  return prev
 }
 
 // Local check:
