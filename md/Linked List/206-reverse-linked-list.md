@@ -32,8 +32,7 @@ function reverseList(head: ListNode | null): ListNode | null {
 }
 
 // Local check:
-const list1 = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5))))
-)
+const list1 = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))))
 console.log(reverseList(list1)) // [5,4,3,2,1]
 
 const list2 = new ListNode(1, new ListNode(2))
