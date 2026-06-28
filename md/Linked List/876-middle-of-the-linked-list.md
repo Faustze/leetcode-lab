@@ -14,6 +14,7 @@ class ListNode {
 }
 
 function middleNode(head: ListNode | null): ListNode | null {
+  // Floyd's slow/fast pointers
   let slow = head;
   let fast = head;
 
