@@ -6,8 +6,8 @@ Personal LeetCode solutions with a built-in TypeScript debugger and automated ta
 
 ```bash
 solutions/
-├── Array/   # 16 problems
-├── Hash Table/   # 1 problems
+├── Array/   # 17 problems
+├── Hash Table/   # 2 problems
 ├── Linked List/   # 2 problems
 ├── Math/   # 2 problems
 ├── Tree/   # 1 problems
@@ -53,13 +53,14 @@ python3 scripts/reclassify.py --dir solutions/custom
 
 ## Tasks
 
-Total: 47 problems
+Total: 49 problems
 
-### Array (16 files)
+### Array (17 files)
 
 | # | Title | Difficulty |
 |---|-------|------------|
 | 150 | Evaluate Reverse Polish Notation | Medium |
+| 217 | Contains Duplicate | Easy |
 | 268 | Missing Number | Easy |
 | 283 | Move Zeroes | Easy |
 | 448 | Find All Numbers Disappeared in an Array | Easy |
@@ -76,11 +77,12 @@ Total: 47 problems
 | 1470 | Shuffle the Array | Easy |
 | 1475 | Final Prices With a Special Discount in a Shop | Easy |
 
-### Hash Table (1 files)
+### Hash Table (2 files)
 
 | # | Title | Difficulty |
 |---|-------|------------|
 | 141 | Linked List Cycle | Easy |
+| 242 | Valid Anagram | Easy |
 
 ### Linked List (2 files)
 
