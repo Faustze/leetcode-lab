@@ -6,7 +6,7 @@ Personal LeetCode solutions with a built-in TypeScript debugger and automated ta
 
 ```bash
 solutions/
-├── Array/   # 17 problems
+├── Array/   # 18 problems
 ├── Hash Table/   # 2 problems
 ├── Linked List/   # 2 problems
 ├── Math/   # 2 problems
@@ -53,12 +53,13 @@ python3 scripts/reclassify.py --dir solutions/custom
 
 ## Tasks
 
-Total: 49 problems
+Total: 50 problems
 
-### Array (17 files)
+### Array (18 files)
 
 | # | Title | Difficulty |
 |---|-------|------------|
+| 49 | Group Anagrams | Medium |
 | 150 | Evaluate Reverse Polish Notation | Medium |
 | 217 | Contains Duplicate | Easy |
 | 268 | Missing Number | Easy |
