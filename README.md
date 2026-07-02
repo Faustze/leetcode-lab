@@ -6,7 +6,7 @@ Personal LeetCode solutions with a built-in TypeScript debugger and automated ta
 
 ```bash
 solutions/
-├── Array/   # 18 problems
+├── Array/   # 19 problems
 ├── Hash Table/   # 2 problems
 ├── Linked List/   # 2 problems
 ├── Math/   # 2 problems
@@ -53,9 +53,9 @@ python3 scripts/reclassify.py --dir solutions/custom
 
 ## Tasks
 
-Total: 50 problems
+Total: 51 problems
 
-### Array (18 files)
+### Array (19 files)
 
 | # | Title | Difficulty |
 |---|-------|------------|
@@ -64,6 +64,7 @@ Total: 50 problems
 | 217 | Contains Duplicate | Easy |
 | 268 | Missing Number | Easy |
 | 283 | Move Zeroes | Easy |
+| 347 | Top K Frequent Elements | Medium |
 | 448 | Find All Numbers Disappeared in an Array | Easy |
 | 485 | Max Consecutive Ones | Easy |
 | 605 | Can Place Flowers | Easy |
