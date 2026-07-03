@@ -12,7 +12,7 @@ solutions/
 ├── Math/   # 2 problems
 ├── Tree/   # 1 problems
 ├── Two Pointers/   # 6 problems
-└── Untagged/   # 19 problems
+└── Untagged/   # 20 problems
 ```
 
 Files are named as `NNNN-problem-name.ts` and grouped by topic.
@@ -53,7 +53,7 @@ python3 scripts/reclassify.py --dir solutions/custom
 
 ## Tasks
 
-Total: 51 problems
+Total: 52 problems
 
 ### Array (19 files)
 
@@ -117,10 +117,11 @@ Total: 51 problems
 | 844 | Backspace String Compare | Easy |
 | 1768 | Merge Strings Alternately | Easy |
 
-### Untagged (19 files)
+### Untagged (20 files)
 
 | # | Title | Difficulty |
 |---|-------|------------|
+| 271 | Encode and Decode Strings | Medium |
 | 2620 | Counter | Easy |
 | 2622 | Cache With Time Limit | Medium |
 | 2623 | Memoize | Medium |
