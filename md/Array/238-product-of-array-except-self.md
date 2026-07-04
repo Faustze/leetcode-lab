@@ -32,12 +32,21 @@ console.log(productExceptSelf([-1, 1, 0, -3, 3])); // [0, 0, 9, 0, 0]
 
 ```md
 Example 1:
-Input: nums = [1,2,3,4]
-Output: [24,12,8,6]
-Explanation: - answer[0] = 2 _ 3 _ 4 = 24 - answer[1] = 1 _ 3 _ 4 = 12 - answer[2] = 1 _ 2 _ 4 = 8 - answer[3] = 1 _ 2 _ 3 = 6
+    Input: nums = [1,2,3,4]
+    Output: [24,12,8,6]
+    Explanation:
+    - answer[0] = 2 * 3 * 4 = 24
+    - answer[1] = 1 * 3 * 4 = 12
+    - answer[2] = 1 * 2 * 4 = 8
+    - answer[3] = 1 * 2 * 3 = 6
 
-Example 2:
-Input: nums = [-1,1,0,-3,3]
-Output: [0,0,9,0,0]
-Explanation: - answer[0] = 1 _ 0 _ -3 _ 3 = 0 - answer[1] = -1 _ 0 _ -3 _ 3 = 0 - answer[2] = -1 _ 1 _ -3 _ 3 = 9 - answer[3] = -1 _ 1 _ 0 _ 3 = 0 - answer[4] = -1 _ 1 _ 0 \* -3 = 0
+  Example 2:
+    Input: nums = [-1,1,0,-3,3]
+    Output: [0,0,9,0,0]
+    Explanation:
+    - answer[0] = 1 * 0 * -3 * 3 = 0
+    - answer[1] = -1 * 0 * -3 * 3 = 0
+    - answer[2] = -1 * 1 * -3 * 3 = 9
+    - answer[3] = -1 * 1 * 0 * 3 = 0
+    - answer[4] = -1 * 1 * 0 * -3 = 0
 ```
