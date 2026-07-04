@@ -6,7 +6,7 @@ Personal LeetCode solutions with a built-in TypeScript debugger and automated ta
 
 ```bash
 solutions/
-├── Array/   # 16 problems
+├── Array/   # 17 problems
 ├── Hash Table/   # 1 problems
 ├── Linked List/   # 2 problems
 ├── Math/   # 2 problems
@@ -53,13 +53,14 @@ python3 scripts/reclassify.py --dir solutions/custom
 
 ## Tasks
 
-Total: 47 problems
+Total: 48 problems
 
-### Array (16 files)
+### Array (17 files)
 
 | # | Title | Difficulty |
 |---|-------|------------|
 | 150 | Evaluate Reverse Polish Notation | Medium |
+| 238 | Product of Array Except Self | Medium |
 | 268 | Missing Number | Easy |
 | 283 | Move Zeroes | Easy |
 | 448 | Find All Numbers Disappeared in an Array | Easy |
