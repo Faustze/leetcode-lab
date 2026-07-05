@@ -6,13 +6,13 @@ Personal LeetCode solutions with a built-in TypeScript debugger and automated ta
 
 ```bash
 solutions/
-├── Array/   # 20 problems
+├── Array/   # 21 problems
 ├── Hash Table/   # 2 problems
 ├── Linked List/   # 2 problems
 ├── Math/   # 2 problems
 ├── Tree/   # 1 problems
-├── Two Pointers/   # 6 problems
-└── Untagged/   # 20 problems
+├── Two Pointers/   # 5 problems
+└── Untagged/   # 21 problems
 ```
 
 Files are named as `NNNN-problem-name.ts` and grouped by topic.
@@ -53,95 +53,96 @@ python3 scripts/reclassify.py --dir solutions/custom
 
 ## Tasks
 
-Total: 53 problems
+Total: 54 problems
 
-### Array (20 files)
+### Array (21 files)
 
-| #    | Title                                                | Difficulty |
-| ---- | ---------------------------------------------------- | ---------- |
-| 49   | Group Anagrams                                       | Medium     |
-| 150  | Evaluate Reverse Polish Notation                     | Medium     |
-| 217  | Contains Duplicate                                   | Easy       |
-| 238  | Product of Array Except Self                         | Medium     |
-| 268  | Missing Number                                       | Easy       |
-| 283  | Move Zeroes                                          | Easy       |
-| 347  | Top K Frequent Elements                              | Medium     |
-| 448  | Find All Numbers Disappeared in an Array             | Easy       |
-| 485  | Max Consecutive Ones                                 | Easy       |
-| 605  | Can Place Flowers                                    | Easy       |
-| 636  | Exclusive Time of Functions                          | Medium     |
-| 643  | Maximum Average Subarray I                           | Easy       |
-| 645  | Set Mismatch                                         | Easy       |
-| 739  | Daily Temperatures                                   | Medium     |
-| 977  | Squares of a Sorted Array                            | Easy       |
-| 1365 | How Many Numbers Are Smaller Than the Current Number | Easy       |
-| 1431 | Kids With the Greatest Number of Candies             | Easy       |
-| 1441 | Build an Array With Stack Operations                 | Medium     |
-| 1470 | Shuffle the Array                                    | Easy       |
-| 1475 | Final Prices With a Special Discount in a Shop       | Easy       |
+| # | Title | Difficulty |
+|---|-------|------------|
+| 36 | Valid Sudoku | Medium |
+| 49 | Group Anagrams | Medium |
+| 150 | Evaluate Reverse Polish Notation | Medium |
+| 217 | Contains Duplicate | Easy |
+| 238 | Product of Array Except Self | Medium |
+| 268 | Missing Number | Easy |
+| 283 | Move Zeroes | Easy |
+| 347 | Top K Frequent Elements | Medium |
+| 448 | Find All Numbers Disappeared in an Array | Easy |
+| 485 | Max Consecutive Ones | Easy |
+| 605 | Can Place Flowers | Easy |
+| 636 | Exclusive Time of Functions | Medium |
+| 643 | Maximum Average Subarray I | Easy |
+| 645 | Set Mismatch | Easy |
+| 739 | Daily Temperatures | Medium |
+| 977 | Squares of a Sorted Array | Easy |
+| 1365 | How Many Numbers Are Smaller Than the Current Number | Easy |
+| 1431 | Kids With the Greatest Number of Candies | Easy |
+| 1441 | Build an Array With Stack Operations | Medium |
+| 1470 | Shuffle the Array | Easy |
+| 1475 | Final Prices With a Special Discount in a Shop | Easy |
 
 ### Hash Table (2 files)
 
-| #   | Title             | Difficulty |
-| --- | ----------------- | ---------- |
-| 141 | Linked List Cycle | Easy       |
-| 242 | Valid Anagram     | Easy       |
+| # | Title | Difficulty |
+|---|-------|------------|
+| 141 | Linked List Cycle | Easy |
+| 242 | Valid Anagram | Easy |
 
 ### Linked List (2 files)
 
-| #   | Title                     | Difficulty |
-| --- | ------------------------- | ---------- |
-| 206 | Reverse Linked List       | Easy       |
-| 876 | Middle of the Linked List | Easy       |
+| # | Title | Difficulty |
+|---|-------|------------|
+| 206 | Reverse Linked List | Easy |
+| 876 | Middle of the Linked List | Easy |
 
 ### Math (2 files)
 
-| #    | Title                              | Difficulty |
-| ---- | ---------------------------------- | ---------- |
-| 67   | Add Binary                         | Easy       |
-| 1071 | Greatest Common Divisor of Strings | Easy       |
+| # | Title | Difficulty |
+|---|-------|------------|
+| 67 | Add Binary | Easy |
+| 1071 | Greatest Common Divisor of Strings | Easy |
 
 ### Tree (1 files)
 
-| #   | Title                        | Difficulty |
-| --- | ---------------------------- | ---------- |
-| 104 | Maximum Depth of Binary Tree | Easy       |
+| # | Title | Difficulty |
+|---|-------|------------|
+| 104 | Maximum Depth of Binary Tree | Easy |
 
-### Two Pointers (6 files)
+### Two Pointers (5 files)
 
-| #    | Title                      | Difficulty |
-| ---- | -------------------------- | ---------- |
-| 125  | Valid Palindrome           | Easy       |
-| 151  | Reverse Words in a String  | Medium     |
-| 345  | Reverse Vowels of a String | Easy       |
-| 392  | Is Subsequence             | Easy       |
-| 844  | Backspace String Compare   | Easy       |
-| 1768 | Merge Strings Alternately  | Easy       |
+| # | Title | Difficulty |
+|---|-------|------------|
+| 125 | Valid Palindrome | Easy |
+| 151 | Reverse Words in a String | Medium |
+| 345 | Reverse Vowels of a String | Easy |
+| 392 | Is Subsequence | Easy |
+| 844 | Backspace String Compare | Easy |
 
-### Untagged (20 files)
+### Untagged (21 files)
 
-| #    | Title                                      | Difficulty |
-| ---- | ------------------------------------------ | ---------- |
-| 271  | Encode and Decode Strings                  | Medium     |
-| 2620 | Counter                                    | Easy       |
-| 2622 | Cache With Time Limit                      | Medium     |
-| 2623 | Memoize                                    | Medium     |
-| 2626 | Array Reduce Transformation                | Easy       |
-| 2627 | Debounce                                   | Medium     |
-| 2629 | Function Composition                       | Easy       |
-| 2631 | Group By                                   | Medium     |
-| 2637 | Promise Time Limit                         | Medium     |
-| 2665 | Counter II                                 | Easy       |
-| 2666 | Allow One Function Call                    | Easy       |
-| 2677 | Chunk Array                                | Easy       |
-| 2693 | Call Function with Custom Context          | Medium     |
-| 2703 | Return Length of Arguments Passed          | Easy       |
-| 2715 | Timeout Cancellation                       | Easy       |
-| 2721 | Execute Asynchronous Functions in Parallel | Medium     |
-| 2723 | Add Two Promises                           | Easy       |
-| 2724 | Sort By                                    | Easy       |
-| 2725 | Interval Cancellation                      | Easy       |
-| 2726 | Calculator with Method Chaining            | Easy       |
+| # | Title | Difficulty |
+|---|-------|------------|
+| 271 | Encode and Decode Strings | Medium |
+| 1768 | Merge Strings Alternately | Easy |
+| 2620 | Counter | Easy |
+| 2622 | Cache With Time Limit | Medium |
+| 2623 | Memoize | Medium |
+| 2626 | Array Reduce Transformation | Easy |
+| 2627 | Debounce | Medium |
+| 2629 | Function Composition | Easy |
+| 2631 | Group By | Medium |
+| 2637 | Promise Time Limit | Medium |
+| 2665 | Counter II | Easy |
+| 2666 | Allow One Function Call | Easy |
+| 2677 | Chunk Array | Easy |
+| 2693 | Call Function with Custom Context | Medium |
+| 2703 | Return Length of Arguments Passed | Easy |
+| 2715 | Timeout Cancellation | Easy |
+| 2721 | Execute Asynchronous Functions in Parallel | Medium |
+| 2723 | Add Two Promises | Easy |
+| 2724 | Sort By | Easy |
+| 2725 | Interval Cancellation | Easy |
+| 2726 | Calculator with Method Chaining | Easy |
 
 ## Customization
 
