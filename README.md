@@ -6,7 +6,7 @@ Personal LeetCode solutions with a built-in TypeScript debugger and automated ta
 
 ```bash
 solutions/
-├── Array/   # 22 problems
+├── Array/   # 23 problems
 ├── Hash Table/   # 2 problems
 ├── Linked List/   # 2 problems
 ├── Math/   # 2 problems
@@ -53,12 +53,13 @@ python3 scripts/reclassify.py --dir solutions/custom
 
 ## Tasks
 
-Total: 56 problems
+Total: 57 problems
 
-### Array (22 files)
+### Array (23 files)
 
 | # | Title | Difficulty |
 |---|-------|------------|
+| 15 | 3Sum | Medium |
 | 36 | Valid Sudoku | Medium |
 | 49 | Group Anagrams | Medium |
 | 128 | Longest Consecutive Sequence | Medium |
