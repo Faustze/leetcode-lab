@@ -6,7 +6,7 @@ Personal LeetCode solutions with a built-in TypeScript debugger and automated ta
 
 ```bash
 solutions/
-├── Array/   # 23 problems
+├── Array/   # 24 problems
 ├── Hash Table/   # 2 problems
 ├── Linked List/   # 2 problems
 ├── Math/   # 2 problems
@@ -53,12 +53,13 @@ python3 scripts/reclassify.py --dir solutions/custom
 
 ## Tasks
 
-Total: 57 problems
+Total: 58 problems
 
-### Array (23 files)
+### Array (24 files)
 
 | # | Title | Difficulty |
 |---|-------|------------|
+| 11 | Container With Most Water | Medium |
 | 15 | 3Sum | Medium |
 | 36 | Valid Sudoku | Medium |
 | 49 | Group Anagrams | Medium |
