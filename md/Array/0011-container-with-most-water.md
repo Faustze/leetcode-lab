@@ -9,28 +9,30 @@
 
 ```ts
 function maxArea(height: number[]): number {
-  let left = 0, right = height.length - 1;
-  let area = 0
+  let left = 0,
+    right = height.length - 1;
+  let area = 0;
 
   while (left < right) {
-    const leftValue = height[left], rightValue = height[right]
-    area = Math.max(area, Math.min(leftValue, rightValue) * (right - left))
+    const leftValue = height[left],
+      rightValue = height[right];
+    area = Math.max(area, Math.min(leftValue, rightValue) * (right - left));
 
     if (leftValue < rightValue) {
-      left++
+      left++;
     } else {
-      right--
+      right--;
     }
   }
 
-  return area
+  return area;
 }
 
 // Local check:
-console.log(maxArea([1, 8, 6, 2, 5, 4, 8, 3, 7])) // 49
-console.log(maxArea([1,7,2,5,4,7,3,6])) // 36
-console.log(maxArea([1, 1])) // 1
-console.log(maxArea([2,2,2])) // 4
+console.log(maxArea([1, 8, 6, 2, 5, 4, 8, 3, 7])); // 49
+console.log(maxArea([1, 7, 2, 5, 4, 7, 3, 6])); // 36
+console.log(maxArea([1, 1])); // 1
+console.log(maxArea([2, 2, 2])); // 4
 ```
 
 ```md
