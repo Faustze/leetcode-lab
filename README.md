@@ -6,10 +6,12 @@ Personal LeetCode solutions with a built-in TypeScript debugger and automated ta
 
 ```bash
 solutions/
-├── Array/   # 24 problems
+├── Array/   # 25 problems
 ├── Hash Table/   # 2 problems
 ├── Linked List/   # 2 problems
 ├── Math/   # 2 problems
+├── Stack/   # 1 problems
+├── String/   # 1 problems
 ├── Tree/   # 1 problems
 ├── Two Pointers/   # 6 problems
 └── Untagged/   # 21 problems
@@ -53,9 +55,9 @@ python3 scripts/reclassify.py --dir solutions/custom
 
 ## Tasks
 
-Total: 58 problems
+Total: 61 problems
 
-### Array (24 files)
+### Array (25 files)
 
 | # | Title | Difficulty |
 |---|-------|------------|
@@ -77,6 +79,7 @@ Total: 58 problems
 | 643 | Maximum Average Subarray I | Easy |
 | 645 | Set Mismatch | Easy |
 | 739 | Daily Temperatures | Medium |
+| 853 | Car Fleet | Medium |
 | 977 | Squares of a Sorted Array | Easy |
 | 1365 | How Many Numbers Are Smaller Than the Current Number | Easy |
 | 1431 | Kids With the Greatest Number of Candies | Easy |
@@ -104,6 +107,18 @@ Total: 58 problems
 |---|-------|------------|
 | 67 | Add Binary | Easy |
 | 1071 | Greatest Common Divisor of Strings | Easy |
+
+### Stack (1 files)
+
+| # | Title | Difficulty |
+|---|-------|------------|
+| 155 | Min Stack | Medium |
+
+### String (1 files)
+
+| # | Title | Difficulty |
+|---|-------|------------|
+| 20 | Valid Parentheses | Easy |
 
 ### Tree (1 files)
 
