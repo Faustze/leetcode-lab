@@ -1,0 +1,9 @@
+zero_padded=$(git diff --cached --name-only --diff-filter=ACMR | grep -E '^solutions/.*\.ts$' | xargs -r -n1 basename | grep -E '^0[0-9]' || true)
+
+if [ -n "$zero_padded" ]; then
+  echo "Zero-padded problem number(s) staged — filenames must be N-slug.ts, not 0N-slug.ts:"
+  echo "$zero_padded" | sed 's/^/  /'
+  exit 1
+fi
+
+exit 0

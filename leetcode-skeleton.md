@@ -17,7 +17,7 @@ Use `solutions/Array/2723-add-two-promises.ts` as the style reference.
   - `https://leetcode.com/problems/memoize/` -> `2623-memoize.ts`
   - `https://leetcode.com/problems/allow-one-function-call/` -> `2666-allow-one-function-call.ts`
   - `https://leetcode.com/problems/daily-temperatures/` -> `739-daily-temperatures.ts`
-- Format: `NNNN-problem-name.ts` (zero-padded number, dash, kebab-case slug).
+- Format: `N-problem-name.ts` (bare problem number, no leading zeros, dash, kebab-case slug).
 - If a file already exists, update it only if the user clearly wants that.
 - After creating, run `npm run update` to update README.
 

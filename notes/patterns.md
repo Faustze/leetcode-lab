@@ -19,8 +19,8 @@ while (left < right) {
 ```
 
 **Задачи в репо:**
-- `solutions/Array/0011-container-with-most-water.ts`
-- `solutions/Array/0015-3sum.ts`
+- `solutions/Array/11-container-with-most-water.ts`
+- `solutions/Array/15-3sum.ts`
 - `solutions/Two Pointers/125-valid-palindrome.ts`
 - `solutions/Two Pointers/151-reverse-words-in-a-string.ts`
 - `solutions/Two Pointers/1768-merge-strings-alternately.ts`
@@ -72,13 +72,14 @@ for (let i = 0; i < arr.length; i++) {
 - `solutions/String/20-valid-parentheses.ts`
 - `solutions/Array/1441-build-an-array-with-stack-operations.ts`
 - `solutions/Array/853-car-fleet.ts` — тот же инвариант без явного стека: идём от машины, ближней к target, к дальней, и держим одно число — время прибытия текущего лидирующего автопарка; если currentTime новой машины больше него — это новый автопарк.
+- `solutions/Array/496-next-greater-element-i.ts` — та же идея, что в Daily Temperatures, но вместо индексного массива ответ пишется в `Record`/`Map` (число → его next greater), потому что итоговый ответ нужен не по позиции в исходном массиве, а по значению из другого массива (nums1 — подмножество nums2). ([LeetCode](https://leetcode.com/problems/next-greater-element-i/), [NeetCode разбор](https://neetcode.io/solutions/next-greater-element-i))
 
 ## Hash Map / Frequency Counting
 
 **Идея:** обменять O(n) память на O(1) проверку "видели ли мы это", "сколько раз", "есть ли пара до нужной суммы".
 
 **Задачи в репо:**
-- `solutions/Array/0049-group-anagrams.ts`
+- `solutions/Array/49-group-anagrams.ts`
 - `solutions/Array/128-longest-consecutive-sequence.ts`
 - `solutions/Array/217-contains-duplicate.ts`
 - `solutions/Array/347-top-k-frequent-elements.ts`

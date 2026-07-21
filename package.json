@@ -4,11 +4,13 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "update": "python3 scripts/reclassify.py && python3 scripts/update_readme.py && python3 scripts/generate_md.py",
-    "classify": "python3 scripts/reclassify.py --file"
+    "update": "python3 scripts/reclassify.py && python3 scripts/update_readme.py && python3 scripts/generate_md.py && python3 scripts/sync_vault.py",
+    "classify": "python3 scripts/reclassify.py --file",
+    "prepare": "husky"
   },
   "devDependencies": {
     "@types/node": "^22.10.0",
+    "husky": "^9.1.7",
     "tsx": "^4.19.0",
     "typescript": "^5.7.0"
   }
