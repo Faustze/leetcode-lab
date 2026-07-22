@@ -1,24 +1,24 @@
-# Паттерны
+# Patterns
 
-Конспект для повторения перед собеседованием (30–60 минут). Один паттерн = один раздел: идея, шаблон кода, канонические задачи из этого репозитория и извне.
+A cheat sheet for interview review (30–60 minutes). One pattern = one section: idea, code template, canonical problems from this repo and outside it.
 
-Ведётся по методике `leetcode-practice` скилла — пополняется после каждой сессии, где паттерн разбирался осознанно (не просто "решил задачу", а понял общий шаблон).
+Maintained via the `leetcode-practice` skill methodology — updated after each session where a pattern was worked through consciously (not just "solved the problem", but understood the general template).
 
 ## Two Pointers
 
-**Идея:** два индекса двигаются по структуре навстречу друг другу или в одном направлении, чтобы избежать вложенного перебора.
+**Idea:** two indices move across a structure toward each other or in the same direction to avoid nested iteration.
 
-**Шаблон:**
+**Template:**
 ```ts
 let left = 0
 let right = arr.length - 1
 while (left < right) {
-  // проверка/решение с arr[left], arr[right]
-  // сдвиг left++ и/или right--
+  // check/decide using arr[left], arr[right]
+  // move left++ and/or right--
 }
 ```
 
-**Задачи в репо:**
+**Problems in repo:**
 - `solutions/Array/11-container-with-most-water.ts`
 - `solutions/Array/15-3sum.ts`
 - `solutions/Two Pointers/125-valid-palindrome.ts`
@@ -30,32 +30,32 @@ while (left < right) {
 
 ## Sliding Window
 
-**Идея:** окно `[left, right]` расширяется/сужается по массиву/строке, инкрементально пересчитывая состояние вместо полного пересчёта на каждом шаге.
+**Idea:** a window `[left, right]` expands/shrinks over the array/string, incrementally recalculating state instead of a full recompute on every step.
 
-**Шаблон:**
+**Template:**
 ```ts
 let left = 0
-let state = 0 // сумма/счётчик/множество в окне
+let state = 0 // sum/counter/set within the window
 for (let right = 0; right < arr.length; right++) {
-  // добавить arr[right] в state
-  while (/* окно невалидно */) {
-    // убрать arr[left] из state
+  // add arr[right] to state
+  while (/* window invalid */) {
+    // remove arr[left] from state
     left++
   }
-  // обновить ответ по текущему окну
+  // update answer based on the current window
 }
 ```
 
-**Задачи в репо:**
+**Problems in repo:**
 - `solutions/Array/643-maximum-average-subarray-i.ts`
 
 ## Monotonic Stack
 
-**Идея:** стек хранит индексы/значения в монотонном порядке; элемент выталкивается, когда находится "следующий больший/меньший" для него — амортизированный O(n) вместо O(n²).
+**Idea:** the stack holds indices/values in monotonic order; an element gets popped once its "next greater/smaller" is found — amortized O(n) instead of O(n²).
 
-**Шаблон:**
+**Template:**
 ```ts
-const stack: number[] = [] // индексы
+const stack: number[] = [] // indices
 const answer = new Array(arr.length).fill(0)
 for (let i = 0; i < arr.length; i++) {
   while (stack.length && arr[i] > arr[stack.at(-1)!]) {
@@ -66,19 +66,20 @@ for (let i = 0; i < arr.length; i++) {
 }
 ```
 
-**Задачи в репо:**
+**Problems in repo:**
 - `solutions/Array/739-daily-temperatures.ts`
 - `solutions/Stack/155-min-stack.ts`
 - `solutions/String/20-valid-parentheses.ts`
 - `solutions/Array/1441-build-an-array-with-stack-operations.ts`
-- `solutions/Array/853-car-fleet.ts` — тот же инвариант без явного стека: идём от машины, ближней к target, к дальней, и держим одно число — время прибытия текущего лидирующего автопарка; если currentTime новой машины больше него — это новый автопарк.
-- `solutions/Array/496-next-greater-element-i.ts` — та же идея, что в Daily Temperatures, но вместо индексного массива ответ пишется в `Record`/`Map` (число → его next greater), потому что итоговый ответ нужен не по позиции в исходном массиве, а по значению из другого массива (nums1 — подмножество nums2). ([LeetCode](https://leetcode.com/problems/next-greater-element-i/), [NeetCode разбор](https://neetcode.io/solutions/next-greater-element-i))
+- `solutions/Array/853-car-fleet.ts` — same invariant without an explicit stack: walk from the car closest to the target toward the farthest, keeping a single number — the arrival time of the current leading fleet; if the new car's currentTime is greater than it, that's a new fleet.
+- `solutions/Array/496-next-greater-element-i.ts` — same idea as Daily Temperatures, but instead of an index array the answer is written into a `Record`/`Map` (number → its next greater), because the final answer is needed not by position in the original array, but by value from a different array (nums1 is a subset of nums2). ([LeetCode](https://leetcode.com/problems/next-greater-element-i/), [NeetCode walkthrough](https://neetcode.io/solutions/next-greater-element-i))
+- `solutions/Array/735-asteroid-collision.ts` — a "stack simulation with chain reaction" variant: an incoming negative element can destroy several elements at the top of the stack in a row, not just one. The key trap is not pushing `curr` right after its first win inside the `while` (otherwise `curr` becomes the new top and the loop stops early, never reaching elements deeper down). This needs an explicit "is curr still alive" flag (rather than checking the stack's shape afterward — a tie that empties the stack is indistinguishable, by the stack's final state, from a clean win that also empties it).
 
 ## Hash Map / Frequency Counting
 
-**Идея:** обменять O(n) память на O(1) проверку "видели ли мы это", "сколько раз", "есть ли пара до нужной суммы".
+**Idea:** trade O(n) memory for an O(1) check of "have we seen this", "how many times", "is there a pair matching the needed sum".
 
-**Задачи в репо:**
+**Problems in repo:**
 - `solutions/Array/49-group-anagrams.ts`
 - `solutions/Array/128-longest-consecutive-sequence.ts`
 - `solutions/Array/217-contains-duplicate.ts`
@@ -87,44 +88,44 @@ for (let i = 0; i < arr.length; i++) {
 
 ## Binary Search
 
-**Идея:** пространство ответов монотонно — можно делить пополам вместо линейного перебора.
+**Idea:** the answer space is monotonic — you can halve it instead of scanning linearly.
 
-**Шаблон:**
+**Template:**
 ```ts
 let lo = 0
 let hi = arr.length - 1
 while (lo <= hi) {
   const mid = lo + Math.floor((hi - lo) / 2)
-  if (/* условие достигнуто */) return mid
-  else if (/* нужно правее */) lo = mid + 1
+  if (/* condition met */) return mid
+  else if (/* need to go right */) lo = mid + 1
   else hi = mid - 1
 }
 ```
 
-**Задачи в репо:** пока нет — следующая цель.
+**Problems in repo:** none yet — next target.
 
 ## Dynamic Programming
 
-**Идея:** разбить задачу на перекрывающиеся подзадачи, кэшировать результат по инварианту (индекс, остаток, битовая маска и т.п.).
+**Idea:** break the problem into overlapping subproblems, caching the result by invariant (index, remainder, bitmask, etc.).
 
-**Задачи в репо:** пока нет — следующая цель.
+**Problems in repo:** none yet — next target.
 
 ## Union-Find (DSU)
 
-**Идея:** отслеживание компонент связности с почти-O(1) union/find через path compression + union by rank.
+**Idea:** tracking connected components with near-O(1) union/find via path compression + union by rank.
 
-**Задачи в репо:** пока нет.
+**Problems in repo:** none yet.
 
 ## Graph BFS/DFS, Dijkstra
 
-**Идея:** BFS — кратчайший путь в невзвешенном графе; Dijkstra — кратчайший путь во взвешенном графе с неотрицательными весами (приоритетная очередь).
+**Idea:** BFS — shortest path in an unweighted graph; Dijkstra — shortest path in a weighted graph with non-negative weights (priority queue).
 
-**Задачи в репо:** пока нет.
+**Problems in repo:** none yet.
 
 ---
 
-## Как пополнять
+## How to maintain this
 
-1. После сессии по `leetcode-practice`, если разобран новый паттерн — добавь раздел или дополни существующий: идея в 1-2 предложения, минимальный шаблон кода, ссылка на решённую задачу.
-2. Не копируй решение задачи целиком — только обобщённый шаблон паттерна.
-3. Держи "Задачи в репо" актуальным: путь должен существовать в `solutions/`.
+1. After a `leetcode-practice` session, if a new pattern was worked through — add a section or extend an existing one: idea in 1-2 sentences, a minimal code template, a link to the solved problem.
+2. Don't copy the full solution — only the generalized pattern template.
+3. Keep "Problems in repo" current: the path must exist in `solutions/`.
