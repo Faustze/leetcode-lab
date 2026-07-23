@@ -6,7 +6,7 @@ Personal LeetCode solutions with a built-in TypeScript debugger and automated ta
 
 ```bash
 solutions/
-├── Array/   # 27 problems
+├── Array/   # 28 problems
 ├── Hash Table/   # 2 problems
 ├── Linked List/   # 2 problems
 ├── Math/   # 2 problems
@@ -55,9 +55,9 @@ python3 scripts/reclassify.py --dir solutions/custom
 
 ## Tasks
 
-Total: 63 problems
+Total: 64 problems
 
-### Array (27 files)
+### Array (28 files)
 
 | # | Title | Difficulty |
 |---|-------|------------|
@@ -79,6 +79,7 @@ Total: 63 problems
 | 636 | Exclusive Time of Functions | Medium |
 | 643 | Maximum Average Subarray I | Easy |
 | 645 | Set Mismatch | Easy |
+| 704 | Binary Search | Easy |
 | 735 | Asteroid Collision | Medium |
 | 739 | Daily Temperatures | Medium |
 | 853 | Car Fleet | Medium |
