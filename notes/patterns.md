@@ -102,7 +102,9 @@ while (lo <= hi) {
 }
 ```
 
-**Problems in repo:** none yet — next target.
+**Problems in repo:**
+- `solutions/Array/704-binary-search.ts`
+- `solutions/Array/74-search-a-2d-matrix.ts` — 2D variant: matrix is row-sorted and rows are chained (first element of a row exceeds the last element of the previous row), so it's really one flat sorted array in disguise. Binary search over a single index range `lo=0, hi=m*n-1`, translating `mid` back to `matrix[Math.floor(mid / n)][mid % n]` where `n` is the column count (`matrix[0].length`, not `matrix.length`). Only one binary search over the whole matrix — no per-row loop needed, and `hi`/`lo` must jump to `mid ± 1`, not step by 1, or the O(log(m*n)) target is lost.
 
 ## Dynamic Programming
 

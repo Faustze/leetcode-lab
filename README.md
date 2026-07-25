@@ -6,7 +6,7 @@ Personal LeetCode solutions with a built-in TypeScript debugger and automated ta
 
 ```bash
 solutions/
-├── Array/   # 28 problems
+├── Array/   # 29 problems
 ├── Hash Table/   # 2 problems
 ├── Linked List/   # 2 problems
 ├── Math/   # 2 problems
@@ -55,9 +55,9 @@ python3 scripts/reclassify.py --dir solutions/custom
 
 ## Tasks
 
-Total: 64 problems
+Total: 65 problems
 
-### Array (28 files)
+### Array (29 files)
 
 | # | Title | Difficulty |
 |---|-------|------------|
@@ -65,6 +65,7 @@ Total: 64 problems
 | 15 | 3Sum | Medium |
 | 36 | Valid Sudoku | Medium |
 | 49 | Group Anagrams | Medium |
+| 74 | Search a 2D Matrix | Medium |
 | 128 | Longest Consecutive Sequence | Medium |
 | 150 | Evaluate Reverse Polish Notation | Medium |
 | 217 | Contains Duplicate | Easy |
